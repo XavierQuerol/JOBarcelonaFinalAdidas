@@ -78,10 +78,19 @@ export const Team = () => {
         setTeam(data);
       });
   };
+  const getClassification = async () => {
+    return await fetch(`http://localhost:3000/classifications/${teamName}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPoints(data.points);
+        setNumTeams(data.num_teams);
+      });
+  };
 
   console.log(team);
   useEffect(() => {
     getTeam();
+    getClassification();
   }, []);
 
   return (
