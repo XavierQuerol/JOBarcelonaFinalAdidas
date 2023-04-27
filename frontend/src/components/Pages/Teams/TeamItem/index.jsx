@@ -1,8 +1,10 @@
-export const TeamItem = ({ name }) => {
+import { Link } from "react-router-dom";
+
+export const TeamItem = ({ name, teamId }) => {
   return (
-    <div>
-      <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" />
+    <Link to={`/team/${name}`}>
+      <img src={`https://cdn.ssref.net/req/202303071/tlogo/fb/${teamId}.png`} />
       <p>{name}</p>
-    </div>
+    </Link>
   );
 };

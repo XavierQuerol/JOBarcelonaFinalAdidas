@@ -1,0 +1,275 @@
+export const league = [
+  {
+    name: "liga-f",
+    teams: [
+      {
+        name: "Alav\u00e9s",
+        id: "aa11fb42",
+      },
+      {
+        name: "Alhama",
+        id: "e9fecaf2",
+      },
+      {
+        name: "Athletic Club",
+        id: "94929c05",
+      },
+      {
+        name: "Atl\u00e9tico Madrid",
+        id: "b56c2667",
+      },
+      {
+        name: "Barcelona",
+        id: "15f49df1",
+      },
+      {
+        name: "Levante",
+        id: "0f4738a8",
+      },
+      {
+        name: "Levante Planas",
+        id: "753b93a5",
+      },
+      {
+        name: "Madrid CFF",
+        id: "89818574",
+      },
+      {
+        name: "Real Betis",
+        id: "74142337",
+      },
+      {
+        name: "Real Madrid",
+        id: "54582b93",
+      },
+      {
+        name: "Real Sociedad",
+        id: "c21f25d3",
+      },
+      {
+        name: "Sevilla",
+        id: "215d9026",
+      },
+      {
+        name: "Sporting Huelva",
+        id: "27acb0af",
+      },
+      {
+        name: "UDG Tenerife",
+        id: "4c088abe",
+      },
+      {
+        name: "Valencia",
+        id: "f96ff499",
+      },
+      {
+        name: "Villarreal",
+        id: "7a7bef84",
+      },
+    ],
+  },
+  {
+    name: "Womens-Super-League",
+    teams: [
+      {
+        name: "Arsenal",
+        id: "411b1108",
+      },
+      {
+        name: "Aston Villa",
+        id: "53157aa8",
+      },
+      {
+        name: "Brighton",
+        id: "fa2752bc",
+      },
+      {
+        name: "Chelsea",
+        id: "a6a4e67d",
+      },
+      {
+        name: "Everton",
+        id: "c4989550",
+      },
+      {
+        name: "Leicester City WFC",
+        id: "23bce84e",
+      },
+      {
+        name: "Liverpool",
+        id: "00f74a56",
+      },
+      {
+        name: "Manchester City",
+        id: "9ce68f8a",
+      },
+      {
+        name: "Manchester Utd",
+        id: "0bbd83f6",
+      },
+      {
+        name: "Reading",
+        id: "5d020380",
+      },
+      {
+        name: "Tottenham",
+        id: "e8e4577c",
+      },
+      {
+        name: "West Ham",
+        id: "52d65cea",
+      },
+    ],
+  },
+  {
+    name: "Division-1-Feminine",
+    teams: [
+      {
+        name: "Bordeaux",
+        id: "69dee2b0",
+      },
+      {
+        name: "Dijon",
+        id: "68f9fd31",
+      },
+      {
+        name: "Fleury",
+        id: "4fcc2996",
+      },
+      {
+        name: "Guingamp",
+        id: "abc4f6d7",
+      },
+      {
+        name: "Le Havre",
+        id: "c57b7254",
+      },
+      {
+        name: "Lyon",
+        id: "7f2012ad",
+      },
+      {
+        name: "Montpellier",
+        id: "7bbdea71",
+      },
+      {
+        name: "Paris FC",
+        id: "28d9b675",
+      },
+      {
+        name: "Paris S-G",
+        id: "80595417",
+      },
+      {
+        name: "Rodez",
+        id: "700c41b4",
+      },
+      {
+        name: "Soyaux",
+        id: "b54d31b3",
+      },
+      {
+        name: "Stade de Reims",
+        id: "e3696882",
+      },
+    ],
+  },
+  {
+    name: "Frauen-Bundesliga",
+    teams: [
+      {
+        name: "Bayern Munich",
+        id: "51ec22be",
+      },
+      {
+        name: "E. Frankfurt",
+        id: "97b7c0e8",
+      },
+      {
+        name: "Essen",
+        id: "becc1dd0",
+      },
+      {
+        name: "Freiburg",
+        id: "b4de690d",
+      },
+      {
+        name: "Hoffenheim",
+        id: "87705c62",
+      },
+      {
+        name: "K\u00f6ln",
+        id: "88ddc98e",
+      },
+      {
+        name: "Leverkusen",
+        id: "c6d4860a",
+      },
+      {
+        name: "MSV Duisburg",
+        id: "0580d9a9",
+      },
+      {
+        name: "SV Meppen",
+        id: "4ed1418c",
+      },
+      {
+        name: "Turbine Potsdam",
+        id: "de550500",
+      },
+      {
+        name: "Werder Bremen",
+        id: "7adbf480",
+      },
+      {
+        name: "Wolfsburg",
+        id: "a1393014",
+      },
+    ],
+  },
+  {
+    name: "Serie-A",
+    teams: [
+      {
+        name: "AC Milan",
+        id: "54da9a57",
+      },
+      {
+        name: "AS Roma",
+        id: "02f8d026",
+      },
+      {
+        name: "ASD Calcio Pomigliano",
+        id: "9f18ced7",
+      },
+      {
+        name: "FC Como Women",
+        id: "756c9acb",
+      },
+      {
+        name: "Fiorentina",
+        id: "c99ff6e5",
+      },
+      {
+        name: "Internazionale",
+        id: "06d05f19",
+      },
+      {
+        name: "Juventus",
+        id: "613577b8",
+      },
+      {
+        name: "Parma Calcio 1913",
+        id: "f7d05cb5",
+      },
+      {
+        name: "Sassuolo",
+        id: "a8e83f23",
+      },
+      {
+        name: "UC Sampdoria",
+        id: "58e367c3",
+      },
+    ],
+  },
+];

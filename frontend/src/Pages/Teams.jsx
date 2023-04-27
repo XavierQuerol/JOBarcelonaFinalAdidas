@@ -1,30 +1,5 @@
 import { TeamsContainer } from "../components/Pages/Teams/TeamsContainer";
-
-const league = [
-  {
-    name: "LFP",
-    teams: [
-      {
-        name: "Barça",
-      },
-      {
-        name: "Barça",
-      },
-      {
-        name: "Barça",
-      },
-      {
-        name: "Barça",
-      },
-      {
-        name: "Barça",
-      },
-      {
-        name: "Barça",
-      },
-    ],
-  },
-];
+import { league } from "../data/teams";
 
 export const Teams = () => {
   return (
@@ -33,5 +8,5 @@ export const Teams = () => {
         return <TeamsContainer key={idx} league={lea} />;
       })}
     </div>
-  )
-}
+  );
+};
