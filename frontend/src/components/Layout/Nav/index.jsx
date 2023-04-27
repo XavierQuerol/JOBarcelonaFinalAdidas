@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
   const [searchField, setSearchField] = useState("");
@@ -26,10 +27,10 @@ export const Nav = () => {
         </button>
       </form>
       <div className="flex items-center justify-evenly w-full">
-        <p>Home</p>
-        <p>Players</p>
-        <p>Teams</p>
-        <p>Leagues</p>
+        <Link to="/">Home</Link>
+        <Link to="/players">Players</Link>
+        <Link to="/teams">Teams</Link>
+        <Link to="/leagues">Leagues</Link>
       </div>
     </div>
   );
