@@ -24,11 +24,16 @@ indexCtrl.renderTeams = (req, res) => {
 };
 
 indexCtrl.renderSearchTeam = (req, res) => {
+  let squadId = ""
+  let allResult = [];
   const teamName = req.params.team;
   const result = teams.filter((el) => removeAccents(el.Squad) === removeAccents(teamName))
-  res.status(200).send(result)
-  teams.forEach(el => console.log(el.Squad))
-  //const filteredTeams = teams.filter(idx => idx.squad == "barcelona");
+  result.forEach((el) => {
+    squadId = el.Squad_id
+  })
+  const filteredPlayers = players.filter((el) => el.Squad_id === squadId);
+  const arrayConcat = result.concat(filteredPlayers)
+  res.status(200).send(arrayConcat)
 }
 
 module.exports = indexCtrl;
