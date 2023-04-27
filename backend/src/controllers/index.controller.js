@@ -2,6 +2,8 @@
 const matches = require("../../../datasets/matches.json");
 const players = require("../../../datasets/players.json");
 const teams = require("../../../datasets/teams.json");
+const classifications = require("../../../datasets/classifications.json");
+const teamLeagues = require("../../../datasets/equipos_liga.json")
 
 //Variables
 const indexCtrl = {};
@@ -25,7 +27,6 @@ indexCtrl.renderTeams = (req, res) => {
 
 indexCtrl.renderSearchTeam = (req, res) => {
   let squadId = ""
-  let allResult = [];
   const teamName = req.params.team;
   const result = teams.filter((el) => removeAccents(el.Squad) === removeAccents(teamName))
   result.forEach((el) => {
@@ -34,6 +35,26 @@ indexCtrl.renderSearchTeam = (req, res) => {
   const filteredPlayers = players.filter((el) => el.Squad_id === squadId);
   const arrayConcat = result.concat(filteredPlayers)
   res.status(200).send(arrayConcat)
+}
+
+indexCtrl.renderClassifications = (req, res) => {
+  let arrayClassifications = [];
+  for(indx in classifications) {
+    arrayClassifications.push(indx)
+  }
+  console.log(arrayClassifications);
+  res.status(200).send(classifications)
+}
+
+//Renderiza la ruta para los equipos de liga
+indexCtrl.renderLeagueTeams = (req, res) => {
+  let leagueName = [];
+  let leagueTeams = [];
+  teamLeagues.forEach((el) => leagueName.push(el.name))
+  teamLeagues.forEach((el) => leagueTeams.push(el.teams))
+  const allData = leagueName.concat(leagueTeams);
+  res.status(200).send(allData)
+  console.log(allData);
 }
 
 module.exports = indexCtrl;
