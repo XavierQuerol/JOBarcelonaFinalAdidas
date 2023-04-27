@@ -1,91 +1,75 @@
+import { useEffect } from "react"
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 export const Player = () => {
   const { playerId } = useParams()
+const [playerData, setPlayerData] = useState()
+  async function getQueryResultsPlayers () {
+    const response = await fetch("http://localhost:3000/players")
+    const data = await response.json()
+    const results = data.filter(player => {
+      return player.Player_id.toLowerCase().includes(playerId.toLowerCase())
+    });
+    setPlayerData(results);
+    console.log(results);
+  }
+useEffect(() => {
+  getQueryResultsPlayers()
+}, [playerId])
 
-
-  return (
-    <div className="flex w-full">
-      <div className="border-2 border-red-600 w-3/5">
-        <div className="border-2 border-red-600 flex items-center justify-between rounded-[40px] m-2 p-5">
+  return (<>
+    {playerData ?
+    <div className="flex w-full flex-col">
+      <div className=" w-full">
+        <div className="border-2 border-gray-300 flex items-center justify-between rounded-[40px] m-2 p-5">
           <div className="flex items-center">
             <img src={`https://fbref.com/req/202302030/images/headshots/${playerId}_2022.jpg`} alt={playerId} className="rounded-full" />
-            <p className="p-5">{playerId}</p>
+            <p className="p-5">{playerData[0].Player}</p>
           </div>
-          <p className="p-5">{playerId}</p>
-        </div>
-        <div className="border-2 border-red-600 rounded-[40px] m-2">
-          <p className="text-center">Matches</p>
-          <div>
-            {/* {matches.map((match, index)=>{
-              <MatchData matchData={match} id={index}/>
-            })} */}
-            <div className="flex items-center p-4 ">
-              <div className="flex place-content-around items-center w-full ">
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-                <p>3-2</p>
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-              </div>
-              <p className="">20/02/2022</p>
-            </div>
-            <div className="flex items-center p-4 ">
-              <div className="flex place-content-around items-center w-full ">
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-                <p>3-2</p>
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-              </div>
-              <p className="">20/02/2022</p>
-            </div>
-            <div className="flex items-center p-4 ">
-              <div className="flex place-content-around items-center w-full ">
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-                <p>3-2</p>
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-              </div>
-              <p className="">20/02/2022</p>
-            </div>
-            <div className="flex items-center p-4 ">
-              <div className="flex place-content-around items-center w-full ">
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-                <p>3-2</p>
-                <img src="https://cdn.ssref.net/req/202303071/tlogo/fb/206d90db.png" alt="a" className="w-20" />
-              </div>
-              <p className="">20/02/2022</p>
-            </div>
-          </div>
+          <p className="p-5">Nation: {playerData[0].Nation}</p>
         </div>
       </div>
-      <div className="border-2 border-red-600 w-2/5">
-        <div className="border-2 border-red-600 rounded-[40px] m-2 p-5">
+      <div className=" ">
+        <div className="border-2 border-gray-300 rounded-[40px] m-2 p-5">
           <p className="text-center">Stats</p>
           <div className="p-2">
-            <div className="flex justify-around p-2">
+            <div className="flex p-2 justify-between">
               <p>Goles marcados</p>
-              <p>{ }</p>
+              <p>{ playerData[0].Gls}</p>
             </div>
-            <div className="flex justify-around p-2">
+            <div className="flex justify-between p-2">
               <p>Minutos jugados</p>
-              <p>{ }</p>
+              <p>{ playerData[0].Min}</p>
             </div>
-            <div className="flex justify-around p-2">
+            <div className="flex justify-between p-2">
+              <p>Partidos jugados</p>
+              <p>{ playerData[0].MP}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Número de veces que ha tocado el balón</p>
+              <p>{ playerData[0].Touches}</p>
+            </div>
+            <div className="flex justify-between p-2">
               <p>Asistencias hechas</p>
-              <p>{ }</p>
+              <p>{ playerData[0].Ast}</p>
             </div>
-            <div className="flex justify-around p-2">
+            <div className="flex justify-between p-2">
               <p>Penaltis marcados</p>
-              <p>{ }</p>
+              <p>{ playerData[0].PK}</p>
             </div>
-            <div className="flex justify-around p-2">
-              <p>Targetas amarillas</p>
-              <p>{ }</p>
+            <div className="flex justify-between p-2">
+              <p>Tarjetas amarillas</p>
+              <p>{ playerData[0].CrdY}</p>
             </div>
-            <div className="flex justify-around p-2">
-              <p>Targetas rojas</p>
-              <p>{ }</p>
+            <div className="flex justify-between p-2">
+              <p>Tarjetas rojas</p>
+              <p>{ playerData[0].CrdR}</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> :null}
+    </>
   )
 }
