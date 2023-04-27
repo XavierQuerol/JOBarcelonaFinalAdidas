@@ -1,10 +1,8 @@
 import { useParams } from "react-router-dom"
-import placeholder from '../assets/placeholder.png'
-import { MatchData } from "../components/MatchData"
 
 export const Player = () => {
   const { playerId } = useParams()
-  
+
 
   return (
     <div className="flex w-full">
