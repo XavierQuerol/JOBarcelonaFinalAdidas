@@ -7,9 +7,6 @@ export const Nav = () => {
       <div className="w-1/3">
         <SearchBar />
       </div>
-      <div className="flex items-center justify-evenly w-full">
-        <Link to="/">Teams</Link>
-      </div>
     </div>
   );
 };
