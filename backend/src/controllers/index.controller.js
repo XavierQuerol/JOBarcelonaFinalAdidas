@@ -3,6 +3,7 @@ const matches = require("../../../datasets/matches.json");
 const players = require("../../../datasets/players.json");
 const teams = require("../../../datasets/teams.json");
 
+
 //Variables
 const indexCtrl = {};
 
@@ -20,9 +21,8 @@ indexCtrl.renderTeams = (req, res) => {
 
 indexCtrl.renderSearchTeam = (req, res) => {
     const teamId = req.params.team
-    for(let indx in teams){
-      res.send(indx)
-    }
+
+    res.send(teamId)
 }
 
 module.exports = indexCtrl;
