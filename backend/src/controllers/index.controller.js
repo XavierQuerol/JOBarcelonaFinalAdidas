@@ -38,11 +38,9 @@ indexCtrl.renderSearchTeam = (req, res) => {
 }
 
 indexCtrl.renderClassifications = (req, res) => {
-  classifications.forEach((el) => {
-    console.log(Object.values(el))
-  })
-  
-  res.status(200).send(classifications)
+  const result = classifications[req.params.team];
+  console.log(result)
+  res.status(200).send(result)
 }
 
 //Renderiza la ruta para los equipos de liga
@@ -53,7 +51,6 @@ indexCtrl.renderLeagueTeams = (req, res) => {
   teamLeagues.forEach((el) => leagueTeams.push(el.teams))
   const allData = leagueName.concat(leagueTeams);
   res.status(200).send(allData)
-  console.log(allData);
 }
 
 module.exports = indexCtrl;

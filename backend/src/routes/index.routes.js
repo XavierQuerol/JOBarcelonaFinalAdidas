@@ -17,7 +17,7 @@ router.get("/teams", renderTeams);
 
 router.get("/teams/:team", renderSearchTeam);
 
-router.get("/classifications", renderClassifications);
+router.get("/classifications/:team", renderClassifications);
 
 router.get("/teamleagues", renderLeagueTeams)
 
