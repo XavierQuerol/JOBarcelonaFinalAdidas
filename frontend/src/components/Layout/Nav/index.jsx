@@ -1,4 +1,4 @@
-import { Link,  useNavigate } from "react-router-dom";
+import { Link,  NavLink,  useNavigate } from "react-router-dom";
 import SearchBar from "../../SearchBar";
 
 export const Nav = () => {
@@ -11,9 +11,8 @@ export const Nav = () => {
         <SearchBar />
       </div>
       <div className="flex items-center justify-evenly w-full">
-        <Link to="/">Teams</Link>
+        <Link to="/">Go to main</Link>
       </div>
-      <button className='rounded-full bg-red-600 p-5' onClick={() => navigate(-1)}>Back</button> 
     </div>
   );
 };
