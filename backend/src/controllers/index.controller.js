@@ -38,11 +38,10 @@ indexCtrl.renderSearchTeam = (req, res) => {
 }
 
 indexCtrl.renderClassifications = (req, res) => {
-  let arrayClassifications = [];
-  for(indx in classifications) {
-    arrayClassifications.push(indx)
-  }
-  console.log(arrayClassifications);
+  classifications.forEach((el) => {
+    console.log(Object.values(el))
+  })
+  
   res.status(200).send(classifications)
 }
 
