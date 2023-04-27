@@ -78,6 +78,7 @@ export const Team = () => {
         setTeam(data);
       });
   };
+
   console.log(team);
   useEffect(() => {
     getTeam();
