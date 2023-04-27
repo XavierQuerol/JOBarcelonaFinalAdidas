@@ -16,9 +16,9 @@ export const AppRouter = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/teams" element={<Home />} />
           <Route path="/players" element={<Players />} />
-          <Route path="/teams" element={<Teams />} />
+          <Route path="/" element={<Teams />} />
           <Route path="/matches" element={<Matches />} />
           <Route path="/leagues" element={<Leagues />} />
           <Route path="/player/:playerId" element={<Player />} />
