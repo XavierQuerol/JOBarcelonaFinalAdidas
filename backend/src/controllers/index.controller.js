@@ -1,4 +1,4 @@
-//Require Dependencies
+//Require Data
 const matches = require("../../../datasets/matches.json");
 const players = require("../../../datasets/players.json");
 const teams = require("../../../datasets/teams.json");
@@ -17,5 +17,14 @@ indexCtrl.renderPlayers = (req, res) => {
 indexCtrl.renderTeams = (req, res) => {
   res.status(200).send(teams);
 };
+
+indexCtrl.renderSearchTeam = (req, res) => {
+    const teamId = req.params.team
+    let teams;
+    
+    for(let i = 0; i < teams.lenght; i++){
+        
+    }
+}
 
 module.exports = indexCtrl;
