@@ -20,10 +20,8 @@ indexCtrl.renderTeams = (req, res) => {
 
 indexCtrl.renderSearchTeam = (req, res) => {
     const teamId = req.params.team
-    let teams;
-    
-    for(let i = 0; i < teams.lenght; i++){
-        
+    for(let indx in teams){
+      res.send(indx)
     }
 }
 
