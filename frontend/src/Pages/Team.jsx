@@ -96,8 +96,43 @@ export const Team = () => {
         </>
       )}
       <div className="w-full flex items-center justify-center">
-        <div className="w-2/3 h-[70vh]">
+        <div className="w-2/3 h-[60vh]">
           {points.length && numTeams && <Line options={options} data={data} />}
+        </div>
+      </div>
+      <div className=" ">
+        <div className="border-2 border-gray-300 rounded-[40px] m-2 p-5">
+          <p className="text-center">Stats</p>
+          <div className="p-2">
+            <div className="flex p-2 justify-between">
+              <p>Goles marcados</p>
+              <p>{ team[0].Gls}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Minutos jugados</p>
+              <p>{ team[0].Min}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Partidos jugados</p>
+              <p>{ team[0].MP}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Asistencias hechas</p>
+              <p>{ team[0].Ast}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Penaltis marcados</p>
+              <p>{ team[0].PK}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Tarjetas amarillas</p>
+              <p>{ team[0].CrdY}</p>
+            </div>
+            <div className="flex justify-between p-2">
+              <p>Tarjetas rojas</p>
+              <p>{ team[0].CrdR}</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-wrap w-full gap-12 items-center justify-center mt-12">
